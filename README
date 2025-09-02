@@ -1,0 +1,78 @@
+# Admin Panel - Gestión de Empleados, Productos y Usuarios
+
+Este proyecto es una aplicación web desarrollada con Angular que permite gestionar empleados, productos y usuarios desde un panel administrativo unificado.
+
+## Características
+
+- **Barra de navegación superior** para acceder rápidamente a cada módulo.
+- **Página de bienvenida** al iniciar la aplicación.
+- **CRUD completo** para empleados, productos y usuarios.
+- **Interfaz moderna** con fondo de patrones tecnológicos y diseño responsivo.
+- **Integración con backend** para operaciones de creación, edición, eliminación y listado.
+
+## Estructura de la aplicación
+
+- **Bienvenida:** Pantalla inicial con mensaje y acceso a los módulos.
+- **Empleados:** Formulario y tabla para gestionar empleados.
+- **Productos:** Formulario y tabla para gestionar productos.
+- **Usuarios:** Formulario y tabla para gestionar usuarios.
+
+## Instalación
+
+1. Clona el repositorio:
+   ```sh
+   git clone https://github.com/tu-usuario/tu-repo.git
+   ```
+2. Instala las dependencias:
+   ```sh
+   cd Frontend/Usuarios
+   npm install
+   ```
+3. Ejecuta la aplicación:
+   ```sh
+   ng serve
+   ```
+4. Accede en tu navegador a [http://localhost:4200](http://localhost:4200)
+
+## Requisitos
+
+- Node.js y npm
+- Angular CLI
+
+## Estructura de carpetas
+
+```
+Frontend/Usuarios/
+├── src/
+│   ├── app/
+│   │   ├── empleados/
+│   │   ├── productos/
+│   │   ├── usuarios/
+│   │   ├── bienvenida/
+│   │   ├── models/
+│   │   └── services/
+│   └── styles.css
+├── angular.json
+├── package.json
+└── README.md
+```
+
+## Vista general
+
+![Admin Panel Screenshot](https://via.placeholder.com/900x400?text=Admin+Panel+Screenshot)
+
+## Diagrama de navegación
+
+```mermaid
+graph TD
+    A[Admin Panel] --> B[Bienvenida]
+    A --> C[Empleados]
+    A --> D[Productos]
+    A --> E[Usuarios]
+```
+
+## Autor
+
+- [Tu Nombre](https://github.com/tu-usuario)
+
+---
