@@ -1,0 +1,38 @@
+<!-- usuarios.component.html -->
+<h2>Usuarios</h2>
+<form #usuarioForm="ngForm" (ngSubmit)="agregarUsuario(usuarioForm)">
+  <input type="hidden" name="_id" [(ngModel)]="usuarioService.selectedUsuario._id">
+  <div class="input-field">
+    <input type="text" name="name" [(ngModel)]="usuarioService.selectedUsuario.name" placeholder="Nombre" required>
+  </div>
+  <div class="input-field">
+    <input type="email" name="email" [(ngModel)]="usuarioService.selectedUsuario.email" placeholder="Correo" required>
+  </div>
+  <div class="input-field">
+    <input type="password" name="password" [(ngModel)]="usuarioService.selectedUsuario.password" placeholder="Contraseña" required>
+  </div>
+  <div class="card-action">
+    <button class="btn blue" type="submit">Guardar</button>
+    <button class="btn grey" type="button" (click)="resetForm(usuarioForm)">Limpiar</button>
+  </div>
+</form>
+
+<table class="highlight">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarioService.usuarios">
+      <td>{{usuario.name}}</td>
+      <td>{{usuario.email}}</td>
+      <td>
+        <button class="btn yellow" (click)="editarUsuario(usuario)">Editar</button>
+        <button class="btn red" (click)="eliminarUsuario(usuario._id!)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col s5">
+      <div class="card">
+        <div class="card-content">
+          <form #empleadoForm="ngForm" (ngSubmit)="agregarEmpleado(empleadoForm)">
+            <div class="input-field">
+              <input type="text" name="name" [(ngModel)]="empleadoService.selectedEmpleado.name" placeholder="Nombre">
+            </div>
+            <div class="input-field">
+              <input type="text" name="position" [(ngModel)]="empleadoService.selectedEmpleado.position" placeholder="Cargo">
+            </div>
+            <div class="input-field">
+              <input type="text" name="office" [(ngModel)]="empleadoService.selectedEmpleado.office" placeholder="Oficina">
+            </div>
+            <div class="input-field">
+              <input type="number" name="salary" [(ngModel)]="empleadoService.selectedEmpleado.salary" placeholder="Salario">
+            </div>
+            <div class="card-action">
+              <button class="btn blue" type="submit">Guardar</button>
+              <button class="btn grey" type="button" (click)="resetForm(empleadoForm)">Limpiar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col s7">
+      <table class="highlight">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Cargo</th>
+            <th>Oficina</th>
+            <th>Salario</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let empleado of empleadoService.empleados">
+            <td>{{empleado.name}}</td>
+            <td>{{empleado.position}}</td>
+            <td>{{empleado.office}}</td>
+            <td>{{empleado.salary}}</td>
+            <td>
+              <button class="btn greenw" (click)="editarEmpleado(empleado)">Editar</button>
+              <button class="btn red" (click)="eliminarEmpleado(empleado._id)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
